@@ -1,0 +1,33 @@
+$global_bezier_easing			: cubic-bezier(.4,0,.2,1);
+$global_easing_parallax		: cubic-bezier(.77,0,.18,1);
+$global_easing_circular		: cubic-bezier(0.075, 0.82, 0.165, 1);
+$global_easing_iCircular	: cubic-bezier(0.1, 0.57, 0.1, 1);
+$global_easing_ease				: ease-in-out;
+
+@mixin sgl-transition($dur) {
+	transition: transform #{$dur + ms} $global_bezier_easing 0ms;
+}
+
+@mixin prop-transition($prop, $dur) {
+	transition: $prop #{$dur + ms} $global_bezier_easing 0ms;
+}
+
+@mixin ot-transition($dur1, $dur2, $del1, $del2) {
+	transition: transform #{$dur1 + ms} $global_bezier_easing #{$del1 + ms},
+	opacity #{$dur2 + ms} $global_bezier_easing #{$del1 + ms};
+}
+
+@mixin kf-spin-rotate() {
+	@keyframes rotating {
+		0% { opacity:0; transform: translate(-50%,-50%)rotate(0deg);}
+		20% { opacity:0; }
+		100% { opacity:1; transform: translate(-50%,-50%)rotate(2160deg); }
+	}
+}
+
+@mixin kf-reveal-opacity() {
+	@keyframes showGrille {
+		0% { opacity: 0; }
+		100% { opacity: 1; }
+	}
+}

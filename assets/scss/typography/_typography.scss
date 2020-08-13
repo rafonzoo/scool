@@ -1,0 +1,76 @@
+/**
+*************************************
+* Define default font sizing 
+* with their leading & spacing.
+* Available sizing font from 6 - 80
+* pixels.
+*************************************
+**/
+
+@import "math-power";
+
+$dynamic-metric-display: -0.02;
+$dynamic-metric-display-large: -0.03; // > 39
+$dynamic-metric-text: -0.0223;
+$dynamic-metric-text-compact: -0.017; //-.002
+$dynamic-metric-euler-multiply: 0.202;
+$euler-exponent-multiply: 0.175;
+
+@function power($number, $exponent) {
+	$value: 1;
+	@if $exponent > 0 {
+		@for $i from 1 through $exponent {
+			$value: $value * $number; }
+	}  @else if $exponent < 0 {
+		@for $i from 1 through -$exponent {
+			$value: $value / $number; }
+	} @return $value;
+}
+
+@function dynamic-metric-tracking($fontsize) {
+	$euler-exponent-value: -($euler-exponent-multiply * $fontsize);
+	$euler-power-exponent: poly-pow(2.71828, $euler-exponent-value);
+	$euler-power-exponent-value: $dynamic-metric-euler-multiply * $euler-power-exponent;
+	@if $fontsize <= 15 {
+		@return $dynamic-metric-text-compact + $euler-power-exponent-value; 
+	} @else if $fontsize == 17 {
+		@return -0.0007;
+	} @else if $fontsize > 15 and $fontsize < 20 {
+		@return $dynamic-metric-text + $euler-power-exponent-value;
+	} @else if $fontsize >= 20 and $fontsize < 40 {
+		@return $dynamic-metric-display + $euler-power-exponent-value;
+	} @else if $fontsize >= 40 and $fontsize < 90 {
+		@return $dynamic-metric-display-large + $euler-power-exponent-value;
+	}
+}
+
+@function dynamic-metric-leading($size) {
+	@if $size <= 15 {
+		@return #{($size + 4) / $size};
+	} @else if $size >= 16 {
+		@return #{($size + 4) / $size};
+	}
+}
+
+@mixin dynamic-font($size, $weight) {
+	font-size: #{$size}px;
+	font-weight: $weight;
+
+	@if $size == 17 {
+		line-height: 1.475;
+	}
+	
+	@if $size <= 20 and $size != 17 {
+		line-height: dynamic-metric-leading($size);
+	} @else if $size >= 21 {
+		line-height: dynamic-metric-leading($size);
+	}
+	@if $size <= 15 {
+		letter-spacing: dynamic-metric-tracking($size) * 1em;
+	} @else if $size >= 16 {
+		letter-spacing: dynamic-metric-tracking($size) * 1em;
+	}
+}
+
+
+

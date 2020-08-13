@@ -1,0 +1,105 @@
+@import "typography/typography";
+
+.headline { 
+	@include dynamic-font(31, 600); 
+
+	@include media(tablet) {
+		@include dynamic-font(36, 600);
+	}
+
+	@include media(desktop) {
+		@include dynamic-font(41, 600);
+	}
+
+	+ .tagline {
+		margin-top: .8em;
+	}
+}
+
+.tagline,
+.more {
+	@include dynamic-font(17, 400); 
+	line-height: 1.475 !important;
+
+	@include media(tablet) {
+		@include dynamic-font(19, 400);
+	}
+
+	@include media(desktop) {
+		@include dynamic-font(21, 400);
+	}
+}
+
+.scn-typography-model {
+	.headline {
+		@include dynamic-font(38, 600);
+		@include media(tablet) {
+			@include dynamic-font(46, 600);
+		}
+		@include media(desktop) {
+			@include dynamic-font(54, 600);
+		}
+	}
+}
+
+.trd-typography-model {
+	.headline {
+		@include dynamic-font(27, 500);
+		@include media(tablet) {
+			@include dynamic-font(31, 500);
+		}
+		@include media(desktop) {
+			@include dynamic-font(31, 500);
+		}
+	}
+}
+
+.text-center .tagline,
+.text-center.tagline {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media(tablet) {
+		max-width: 430px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include media(desktop) {
+		max-width: 480px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.text-left .tagline,
+.text-left.tagline {
+	max-width: 400px;
+	margin-left: 0;
+	margin-right: auto;
+
+	@include media(tablet) {
+		max-width: 430px;
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	@include media(desktop) {
+		max-width: 480px;
+		margin-left: 0;
+		margin-right: auto;
+	}
+}
+
+.tagline > li {
+	padding-left: 0;
+
+	.feather {
+		stroke: var(--bs-success);
+		margin-right: .5em;
+	}
+	+ li {
+		margin-top: .325em;
+	}
+}

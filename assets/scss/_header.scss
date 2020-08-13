@@ -1,0 +1,49 @@
+$global_header_height: 50px !default;
+$global_header_padding: .5rem 1rem;
+$global_header_background: transparent;
+
+.scl-global-head,
+.scl-gh-container {
+	background-color: $global_header_background;
+	overflow: visible;
+	position: relative;
+	display: block;
+	height: $global_header_height;
+	z-index: 1;
+
+	@include media(phone) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: center;
+	}
+}
+
+.scl-head-branding {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-between;
+	padding: .5rem 0;
+	height: inherit;
+
+	@include media(phone) {
+		flex: 0 1 30px;
+		max-width: 30px;
+	}
+}
+
+.scl-head-branding > a {
+	display: table;
+	margin-right: 1rem;
+	font-size: 1.25rem;
+	line-height: inherit;
+	white-space: nowrap;
+}
+
+.scl-head-branding > a > img {
+	display: table-cell;
+	vertical-align: middle;
+	max-width: 30px;
+	max-height: 30px;
+}

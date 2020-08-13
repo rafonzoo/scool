@@ -1,0 +1,50 @@
+/**
+ * Run each direct animation in a 
+ * data-#prop-animation attribute
+ * @type {String} states
+ */
+
+[data-spin-animation="init"] {
+	opacity: 0;
+	transform: translate(-50%,-50%)rotate(1080deg);
+}
+
+[data-spin-animation="roll"] {
+	@include kf-spin-rotate();
+	animation-duration: 7s;
+	animation-name: rotating;
+	animation-fill-mode: forwards;
+}
+
+[data-spin-animation="off"],
+[data-type-animation="off"] {
+	transform: translate(-50%,-50%)rotate(0deg);
+	animation: none;
+}
+
+[data-spin-effect="cubic-roll"] {
+	transition: transform 4s $global_easing_iCircular;
+	transition-delay: 0ms;
+}
+
+[data-type-animation="opacity"] {
+	opacity: 0;
+}
+
+[data-type-animation="reveal-opacity"] {
+	opacity: 0;
+	animation: showGrille 6s ease forwards;
+	animation-delay: 1s;
+	@include kf-reveal-opacity();
+}
+
+/**
+ * Data attribute complementer.
+ * Like lock, states, duration
+ * and etc.
+ */
+[data-body-scroll="lock"] {
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+}

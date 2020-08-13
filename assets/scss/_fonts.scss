@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Inter UI';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inter-UI-Regular'), local('Inter-UI-Regular'),
+       url('../fonts/Inter-UI-Regular.woff') format('woff'),
+       url('../fonts/Inter-UI-Regular.woff') format('woff2');
+}
+@font-face { 
+  font-family: 'Inter UI';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Inter-UI-Medium'), local('Inter-UI-Medium'),      
+       url('../fonts/Inter-UI-Medium.woff') format('woff'),
+       url('../fonts/Inter-UI-Medium.woff') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Inter-UI-SemiBold'), local('Inter-UI-SemiBold'),
+       url('../fonts/Inter-UI-SemiBold.woff') format('woff'),
+       url('../fonts/Inter-UI-SemiBold.woff') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inter-UI-Bold'), local('Inter-UI-Bold'),
+       url('../fonts/Inter-UI-Bold.woff') format('woff'),
+       url('../fonts/Inter-UI-Bold.woff') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Inter-UI-ExtraBold'), local('Inter-UI-ExtraBold'),
+       url('../fonts/Inter-UI-ExtraBold.woff') format('woff'),
+       url('../fonts/Inter-UI-ExtraBold.woff') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Inter-UI-Black'), local('Inter-UI-Black'),
+       url('../fonts/Inter-UI-Black.woff') format('woff'),
+       url('../fonts/Inter-UI-Black.woff') format('woff2');
+}
+

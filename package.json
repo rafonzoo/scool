@@ -1,0 +1,46 @@
+{
+  "name": "scool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.babel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Rafa Rahmandika",
+  "license": "ISC",
+  "homepage": "",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-transform-for-of": "^7.7.4",
+    "@babel/plugin-transform-object-assign": "^7.7.4",
+    "@babel/plugin-transform-regenerator": "^7.10.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/register": "^7.10.5",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-bro": "^2.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-prettier": "^2.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "merge-stream": "^2.0.0",
+    "node-sass": "^4.14.1",
+    "rollup": "^1.29.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "vh-check": "^2.0.5"
+  }
+}

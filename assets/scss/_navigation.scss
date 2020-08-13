@@ -1,0 +1,156 @@
+.scl-head-navigation {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.scl-global-navigation {
+	display: block;
+	overflow: hidden;
+	pointer-events: none;
+	width: 100%;
+}
+
+.scl-global-navigation.toggled {
+	display: block;
+	overflow: hidden;
+	pointer-events: all;
+
+	.scl-gn-button {
+		transform: rotate(180deg);
+		transform-origin: 50% 40%;
+		@include sgl-transition(400);
+	}
+
+	.menu-local-menu-container {
+		transform: scaleY(1);
+		@include prop-transition(transform, 400);
+	}
+
+	.menu-local-menu-container>ul {
+		pointer-events: all;
+		user-select: all;
+	}
+}
+
+.scl-gn-button {
+	display: block;
+	padding:0;
+	border: none;
+	margin: $global_header_padding;
+	margin-left: auto;
+	pointer-events: all;
+	will-change: transform;
+
+	@include media(phone) {
+		display: none;
+	}
+
+	transform: rotate(0deg);
+	transform-origin: 50% 40%;
+	@include sgl-transition(400);
+}
+
+.scl-gn-button:hover,
+.scl-gn-button:focus {
+	box-shadow: none;
+	outline: none;
+	border-color: transparent;
+}
+
+.scl-gn-button > .feather {
+	line-height: inherit;
+	white-space: nowrap;
+	font-size: 34px;
+	width: 1em;
+	height: 1em;
+}
+
+.menu-local-menu-container {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+
+	transform: scaleY(0);
+	transform-origin: top;
+	will-change: transform;
+	@include prop-transition(transform, 400);
+}
+
+.menu-local-menu-container > ul {
+	display: block;
+	position: relative;
+	pointer-events: none;
+	user-select: none;
+	background-color: $global_header_background;
+	padding: 1em 12.5%;
+
+	> li {
+		display: block;
+		position: relative;
+		float: none;
+		padding: 0;
+
+		&+ li {
+			border-top: 1px solid #ddd;
+		}
+	}
+
+	> li a {
+		display: block;
+		position: relative;
+		line-height: $global_header_height;
+		color: inherit;
+	}
+
+	a:hover, a:focus, a:active {
+		text-decoration: none;
+		opacity: .5;
+	}
+}
+
+// Navigation Bar for screen > 768px
+@include media(phone) {
+	.scl-head-navigation {
+		flex: 1 0 calc(100% - 46px);
+		max-width: calc(100% - 46px);
+		position: relative;
+		pointer-events: all;
+		top: auto;
+		left: auto;
+	}
+
+	.menu-local-menu-container {
+		display: block;
+		position: relative;
+		transform: none;
+		transition: none;
+	}
+
+	.menu-local-menu-container>ul {
+		text-align: right;
+		user-select: all;
+		pointer-events: all;
+		padding: 0;
+	}
+
+	.menu-local-menu-container>ul>li {
+		display: inline-block;
+		position: relative;
+		float: none;
+		padding: 0;
+
+		&+ li {
+			border-top-width: 0px;
+			border-top-style: none;
+			border-top-color: transparent;
+		}
+	}
+	
+	.menu-local-menu-container>ul>li>a {
+		text-indent: 0;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}
